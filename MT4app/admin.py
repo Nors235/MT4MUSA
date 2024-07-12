@@ -15,7 +15,4 @@ class admin.py(SummernoteModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('content',)
 
-
-class service admin (SummernoteModelAdmin)
-      
       
