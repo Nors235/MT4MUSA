@@ -1,16 +1,17 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect 
 
 from django.views.generic import TemplateView 
-from .models import Post
-
-class PostList(generic.ListView):
-    model = Post
-class DetailingView(TemplateView):
-    pass
 
 from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Service, Review
+
+def welcome(request):
+    return render(request,'MT4app/welcome.html')
+
+
+class DetailingView(TemplateView):
+    pass
 
 class ServiceListView(ListView):
     model = Service
@@ -26,6 +27,7 @@ class ServiceDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context['reviews'] = Review.objects.filter(service=self.object)
         return context
+
 
 class ReviewCreateView(LoginRequiredMixin, CreateView):
     model = Review
