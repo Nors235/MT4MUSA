@@ -23,4 +23,5 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path("accounts/", include("allauth.urls")),
     path("", include("MT4app.urls"), name="MT4app.urls"),
+    
 ]
