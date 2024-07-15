@@ -125,7 +125,7 @@ DATABASES = {
 #     }
 
 CSRF_TRUSTED_ORIGINS = [
- "https://*.8000-noora235-mt4musa-tbdmix5j4tj.ws.codeinstitute-ide.net",
+ "https://8000-nors235-mt4musa-caur2rgeppy.ws.codeinstitute-ide.net/admin/login/?next=/admin/",
  "https://*."
 ]
 
