@@ -129,6 +129,8 @@ CSRF_TRUSTED_ORIGINS = [
  "https://*."
 ]
 
+CSRF_TRUSTED_ORIGINS =[https://8000-nors235-mt4musa-caur2rgeppy.ws.codeinstitute-ide.net/admin/login/?next=/admin/]
+
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
