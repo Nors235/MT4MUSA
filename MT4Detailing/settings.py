@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-noora235-mt4musa-tbdmix5j4tj.ws.codeinstitute-ide.net', '.herokuapp.com” ']
+ALLOWED_HOSTS = ['.codeinstitute-ide.net', '.herokuapp.com” ']
 
  # Add Render.com URL to allowed hosts
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
