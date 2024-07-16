@@ -1,6 +1,6 @@
 /* General Styles */
 .logo {
-    background-image: url("/static/css/media/logo.png"); /
+    background-image: url("/static/css/media/logo.png"); 
     background-repeat: no-repeat;
     background-size: cover;
     padding: 0px;
@@ -13,8 +13,8 @@ body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: black; 
-    color: #333;
+    background-color:#fff; 
+    color: white;
 }
 
 /* Branding */
