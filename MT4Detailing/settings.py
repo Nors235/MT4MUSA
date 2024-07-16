@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.codeinstitute-ide.net', '.herokuapp.com” ']
+ALLOWED_HOSTS = ['.codeinstitute-ide.net', '.render.com']
 
  # Add Render.com URL to allowed hosts
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
@@ -125,14 +125,12 @@ DATABASES = {
 #     }
 
 CSRF_TRUSTED_ORIGINS = [
- "https://8000-nors235-mt4musa-caur2rgeppy.ws.codeinstitute-ide.net/admin/login/?next=/admin/",
- "https://*."
+
+    "https://*.8000-nors235-mt4musa-caur2rgeppy.ws.codeinstitute-ide.net/admin/login/?next=/admin/"
+    "https://*.dashboard.render.com/"
 ]
 
-CSRF_TRUSTED_ORIGINS =[
-    "https://8000-nors235-mt4musa-caur2rgeppy.ws.codeinstitute-ide.net/admin/login/?next=/admin/"
-
-]
+# ]
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

@@ -1,17 +1,39 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
+{% extends "base.html" %}
+{% load static %}
 
-</style>
-</head>
-<body>
+{% block content %}
 
-<h2>Modal Example</h2>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Services</h1>
+    </div>
+  </div>
+</div>
+
+<div class="container img">
+  <div class="row">
+    {% for service in services %}
+    <div class="col-md-3 col-lg-3 col-xl-3"> 
+      <a href="#" class="text-decoration-none text-reset">
+        <div class="card mb-4">
+          <img src="/static/css/media/ceramic_coating.png" class="card-img-top" alt="Ceramic Coating"> 
+          <div class="card-body">
+            <h5 class="card-title rec-card-title">{{ service.title }}</h5>
+            <p class="card-text">{{ service.description }}</p>
+            <hr>
+            <div class="card-text">{{ service.price }}</div>
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
 
 <!-- Trigger/Open The Modal -->
-<button id="myBtn">Open Modal</button>
+<button id="myBtn">Leave a review</button>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -96,5 +118,4 @@ window.onclick = function(event) {
 }
 </script>
 
-</body>
-</html>
+{% endblock %}

@@ -14,6 +14,16 @@ def welcome(request):
     
     return render(request, 'MT4app/welcome.html')
 
+def services(request):
+    services = Service.objects.all()
+    context = {
+        'services': services
+    }
+    template = 'MT4app/services.html'
+
+    return render(request, template, context)
+
+
 
 # class DetailingView(TemplateView):
 #     pass
