@@ -1,11 +1,19 @@
-{% extends "base.html" %}
-
 /* General Styles */
+.logo {
+    background-image: url("/static/css/media/logo.png"); /
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0px;
+    margin: 0px;
+    width: 150px; 
+    height: 50px; 
+  }
+
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+    background-color: black; 
     color: #333;
 }
 
@@ -14,7 +22,7 @@ body {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #4A4A4F;
+    color: orange; 
 }
 
 /* Card Styles */
@@ -23,7 +31,40 @@ body {
     background-color: transparent;
 }
 
+
+/* Navbar */
+.navbar {
+    background-color: black; /* Remains black */
+    border-bottom: 2px solid #e7e7e7;
+    box-shadow: 0 2px 4px rgba(58, 15, 15, 0.1);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: orange; 
+}
+
+.navbar-brand:hover {
+    color: orange; 
+}
+
 /* Hero Section */
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(194, 132, 18); 
+    background-color: white; 
+    padding: 20px;
+    font-size: 24px; 
+    text-align: center; 
+    width: 80%; 
+    max-width: 600px; 
+    box-sizing: border-box; 
+}
+
 .hero-image {
     position: relative;
     width: 100%;
@@ -34,35 +75,18 @@ body {
     background-size: cover;
 }
 
-/* Navbar */
-.navbar {
-    background-color: black;
-    border-bottom: 2px solid #e7e7e7;
-    box-shadow: 0 2px 4px rgba(58, 15, 15, 0.1);
-}
-
-.navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-}
-
-.navbar-brand:hover {
-    color: black;
-}
-
 /* Services Modal */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.4); 
 }
 
 /* Input Fields */
@@ -169,4 +193,25 @@ input[type=submit]:hover {
 
 .col-md-4 {
     padding: 15px;
+}
+
+.mt4-footer {
+    background-color: black;
+    color: orange;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: row; 
+}
+  
+
+.mt4-footer ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex; 
+    gap: 20px; 
+}
+
+.mt4-footer li span {
+    margin: 0; 
 }
