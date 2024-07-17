@@ -7,13 +7,14 @@
     margin: 0px;
     width: 150px; 
     height: 50px; 
-}
+  }
 
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #FFFFFF; /* White */
+    background-color:#fff; 
+    
 }
 
 /* Branding */
@@ -21,13 +22,184 @@ body {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #F15025; /* International Orange */
+    color: orange; 
 }
 
 /* Card Styles */
 .card {
     border: none;
-    background-color: transparent;
+    background-color: #e6e8e6;
 }
 
 /* Navbar */
+.navbar {
+    background-color: black;
+    border-bottom: 2px solid #e7e7e7;
+    box-shadow: 0 2px 4px rgba(58, 15, 15, 0.1);
+
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: orange; 
+}
+
+.navbar-brand:hover {
+    color: orange; 
+}
+
+/* Hero Section */
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(194, 132, 18); 
+    background-color: white; 
+    padding: 20px;
+    font-size: 24px; 
+    text-align: center; 
+    width: 80%; 
+    max-width: 600px; 
+    box-sizing: border-box; 
+}
+
+/* Services Modal */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+
+/* Input Fields */
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Buttons */
+input[type=submit] {
+    background-color: #0056b3;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    transition: background-color 0.3s ease;
+}
+
+input[type=submit]:hover {
+    background-color: #004494;
+}
+
+/* Additional Styles */
+.container {
+    border-radius: 8px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+/* Responsive Layout */
+@media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+/* Index Page Specific Styles */
+.container-fluid {
+    padding: 20px;
+}
+
+.card {
+    border: 1px solid #e7e7e7;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px #ced0ce(0, 0, 0, 0.15);
+}
+
+/* Additional Index Page Styles */
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background-color: #e7e7e7;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+}
+
+.image-flash {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+}
+
+/* Pagination */
+.pagination {
+    margin: 20px 0;
+}
+
+.page-link {
+    color: #0056b3;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 1px solid #e7e7e7;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.page-link:hover {
+    background-color: #CED0CE;
+    color: #ffffff;
+}
+
+/* Utility Classes */
+.row {
+    margin: 0 -15px;
+}
+
+.col-md-4 {
+    padding: 15px;
+}
+
+.mt4-footer {
+    background-color: #191919;
+    color: orange;
+    padding: 0;
+    
+}
+  
+
+.mt4-footer ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex; 
+    gap: 20px; 
+}
+
+.mt4-footer li span {
+    margin: 0; 
+}
