@@ -44,15 +44,15 @@ def services(request):
 #         return context
 
 
-# class ReviewCreateView(LoginRequiredMixin, CreateView):
-#     model = Review
-#     fields = ['content', 'rating']
-#     template_name = 'reviews/create_review.html'
+class ReviewCreateView(LoginRequiredMixin, CreateView):
+    model = Review
+    fields = ['content', 'rating']
+    template_name = 'MT4app/services.html'
     
-#     def form_valid(self, form):
-#         form.instance.service = Service.objects.get(pk=self.kwargs['service_pk'])
-#         form.instance.customer = self.request.user
-#         return super().form_valid(form)
+    def form_valid(self, form):
+        form.instance.reviews = Reviews.objects.get(pk=self.kwargs['review_pk'])
+        form.instance.customer = self.request.user
+        return super().form_valid(form)
     
-#     def get_success_url(self):
-#         return reverse('services-detail', args=[self.object.service.pk])
+    def get_success_url(self):
+        return reverse('reviews-detail', args=[self.object.review.pk])
