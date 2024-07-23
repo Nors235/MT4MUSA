@@ -5,7 +5,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col">
+    <div class="col text-center">
       <h1>Services</h1>
     </div>
   </div>
@@ -28,6 +28,22 @@
       </a>
     </div>
     {% endfor %}
+  </div>
+
+
+
+  <div class="row">
+    <div class="col text-center">
+<h1> Discover what our clients are saying about our services </h1>
+    </div>
+
+    <div class="row">
+      {% for review in reviews %}
+
+      {{ review.service }}
+      {{ review.customer }}
+      {% endfor  %}
+    </div>
   </div>
 </div>
 

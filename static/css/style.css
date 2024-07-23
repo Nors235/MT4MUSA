@@ -34,8 +34,8 @@ body {
 /* Navbar */
 .navbar {
     background-color: black;
-    border-bottom: 2px solid #e7e7e7;
-    box-shadow: 0 2px 4px rgba(58, 15, 15, 0.1);
+    border-bottom: 2px solid black;
+    box-shadow: 0 2px 4px rgb(23, 21, 21);
 
 }
 

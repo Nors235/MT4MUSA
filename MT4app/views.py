@@ -16,9 +16,11 @@ def welcome(request):
     return render(request, 'MT4app/welcome.html')
 
 def services(request):
-    services = Service.objects.all()
+    services = Service.objects.all().order_by('-id')
+    reviews = Review.objects.all().order_by('-id')
     context = {
-        'services': services
+        'services': services,
+        'reviews': reviews,
     }
     template = 'MT4app/services.html'
 
