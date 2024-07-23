@@ -23,7 +23,9 @@ def services(request):
 
     return render(request, template, context)
 
+def create_services(request):
 
+    return render(request, 'MT4app/create_services.html')
 
 # class DetailingView(TemplateView):
 #     pass
