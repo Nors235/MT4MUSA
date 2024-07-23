@@ -1,8 +1,9 @@
-from django.shortcuts import render, get_object_or_404, redirect 
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views.generic import TemplateView 
 from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Service, Review
+from .forms import ServiceForm
 
 
 def welcome(request):
@@ -23,9 +24,30 @@ def services(request):
 
     return render(request, template, context)
 
-def create_services(request):
 
-    return render(request, 'MT4app/create_services.html')
+def create_services(request):
+    """ Add a service to the site """
+    if not request.user.is_superuser:
+        return redirect(reverse('home'))
+
+    if request.method == 'POST':
+            form = ServiceForm(request.POST, request.FILES)
+
+            if form.is_valid():
+                form.save()
+                print('save')
+                return redirect(reverse('services'))
+            else:
+                form = ServiceForm()
+                print('error')
+    else:
+            form = ServiceForm()
+
+    template = 'MT4app/create_services.html'
+    context = {
+        'form': form,
+    }
+    return render(request, template, context)
 
 # class DetailingView(TemplateView):
 #     pass

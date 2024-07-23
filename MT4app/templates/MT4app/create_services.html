@@ -2,5 +2,25 @@
 
 {% block content %}
 
-<h1> Create services </h1>
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <h1>Add Services</h1>
+      </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col">
+            <form action="{% url 'create_services' %}" method="POST" class="form mb-2" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form}}
+                <button class="btn logo-font btn-style rounded" type="submit">Add Service</button>
+            </form>
+        </div>
+    </div>
+  </div>
+
+
+
 {% endblock %}
