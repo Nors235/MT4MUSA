@@ -27,7 +27,7 @@
         </a>
         {% if request.user.is_superuser %}
         <div class="div text-center">
-          <a href="#"><button class="btn btn-success ">Edit</button></a></span>
+          <a href="{% url 'edit_service' service.id %}"><button class="btn btn-success ">Edit</button></a></span>
           <a href="#"><button class="btn btn-danger ">Delete</button></a></span>
         </div>
         {% endif %}
