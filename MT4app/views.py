@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Service, Review
-from .forms import ServiceForm
+from .forms import ServiceForm, ReviewForm
 
 
 def welcome(request):
