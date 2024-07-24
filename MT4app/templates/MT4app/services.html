@@ -15,8 +15,8 @@
   <div class="row">
     {% for service in services %}
     <div class="col-md-3 col-lg-3 col-xl-3"> 
-      <a href="#" class="text-decoration-none text-reset">
-        <div class="card mb-4">
+      <div class="card mb-4">
+          <a href="#" class="text-decoration-none text-reset">
           <img src="/static/css/media/ceramic_coating.png" class="card-img-top" alt="Ceramic Coating"> 
           <div class="card-body">
             <h5 class="card-title rec-card-title">{{ service.name }}</h5>
@@ -24,8 +24,14 @@
             <hr>
             <div class="card-text">£ {{ service.price }} </div>
           </div>
+        </a>
+        {% if request.user.is_superuser %}
+        <div class="div text-center">
+          <a href="#"><button class="btn btn-success ">Edit</button></a></span>
+          <a href="#"><button class="btn btn-danger ">Delete</button></a></span>
         </div>
-      </a>
+        {% endif %}
+        </div>
     </div>
     {% endfor %}
   </div>
