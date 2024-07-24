@@ -51,6 +51,30 @@ def create_services(request):
     }
     return render(request, template, context)
 
+
+def edit_service(request,service_id):
+    """edit service view"""
+
+    service= get_object_or_404(Service, pk=service_id)
+    if request.method == 'POST':
+        form = ServiceForm(request.POST, instance=service)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('services'))
+        else:
+            form = ServiceForm()
+    else:
+        form = ServiceForm(instance=service)
+
+    template = 'MT4app/edit_service.html'
+    context = {
+        'form': form,
+        'service': service,
+    }
+
+    return render(request, template, context)
+
+
 # class DetailingView(TemplateView):
 #     pass
 
