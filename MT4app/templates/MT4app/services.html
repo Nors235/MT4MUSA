@@ -38,13 +38,33 @@
     </div>
 
     <div class="row">
-      {% for review in reviews %}
+      <div class="col">
+        <button type="button" class="btn btn-success">Leave a Review</button>
+      </div>
+    </div>
 
-      {{ review.service }}
-      {{ review.customer }}
-      {% endfor  %}
+    <div class="row">
+      <div class="col m-5">
+        <ul class="list-group list-group-flush">
+          {% for review in reviews %}
+          <li class="list-group-item">
+            <div class="fw-bold">Service: {{ review.service }}</div>
+            <div class="div">{{ review.content}}</div>
+            <div class="div">Rating: {{ review.rating}}</div>
+            <div class="div">By: {{ review.customer }}</div>
+          </li>
+          {% endfor  %}
+        </ul>
+      </div>
     </div>
   </div>
+
+
+
+
+
+
+
 </div>
 
 
