@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views.generic import TemplateView 
 from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 from .models import Service, Review
 from .forms import ServiceForm, ReviewForm
 
@@ -26,7 +27,7 @@ def services(request):
 
     return render(request, template, context)
 
-
+@login_required
 def create_services(request):
     """ Add a service to the site """
     if not request.user.is_superuser:
@@ -52,8 +53,12 @@ def create_services(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_service(request,service_id):
     """edit service view"""
+
+    if not request.user.is_superuser:
+        return redirect(reverse('home'))
 
     service= get_object_or_404(Service, pk=service_id)
     if request.method == 'POST':
@@ -73,6 +78,15 @@ def edit_service(request,service_id):
     }
 
     return render(request, template, context)
+
+@login_required
+def delete_service(request,service_id):
+    """ Delete service """
+
+    service = get_object_or_404(Service, id=service_id)
+    service.delete()
+
+    return redirect(reverse('books'))
 
 
 # class DetailingView(TemplateView):

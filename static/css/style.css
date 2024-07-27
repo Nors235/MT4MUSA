@@ -203,3 +203,9 @@ input[type=submit]:hover {
 .mt4-footer li span {
     margin: 0; 
 }
+
+/* Modal */
+
+.modal-backdrop {
+    display: none !important;
+}
