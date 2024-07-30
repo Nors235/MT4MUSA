@@ -80,7 +80,7 @@ def edit_service(request,service_id):
     return render(request, template, context)
 
 @login_required
-def delete_service(request,service_id):
+def delete_service(request, service_id):
     """ Delete service """
 
     service = get_object_or_404(Service, id=service_id)
