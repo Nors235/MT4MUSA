@@ -11,13 +11,13 @@
   </div>
 </div>
 
-<div class="container img">
+<div class="container">
   <div class="row">
     {% for service in services %}
-    <div class="col-md-3 col-lg-3 col-xl-3"> 
+    <div class="col-md-3 col-lg-3 col-xl-3">
       <div class="card mb-4">
-          <a href="#" class="text-decoration-none text-reset">
-          <img src="/static/css/media/ceramic_coating.png" class="card-img-top" alt="Ceramic Coating"> 
+        <a href="#" class="text-decoration-none text-reset">
+          <img src="/static/css/media/ceramic_coating.png" class="card-img-top" alt="Ceramic Coating">
           <div class="card-body">
             <h5 class="card-title rec-card-title">{{ service.name }}</h5>
             <p class="card-text">{{ service.description }}</p>
@@ -25,6 +25,7 @@
             <div class="card-text">£ {{ service.price }} </div>
           </div>
         </a>
+        
         {% if request.user.is_superuser %}
         <div class="div text-center">
           <a href="{% url 'edit_service' service.id %}"><button class="btn btn-success ">Edit</button></a></span>
@@ -32,9 +33,8 @@
           </span>
         </div>
         {% endif %}
-        </div>
+      </div>
     </div>
-    {% endfor %}
   </div>
 
 
@@ -48,7 +48,7 @@
         </div>
         <div class="modal-body">
           <h4>Are you sure you want to delete the service {{ service.name}}?</h4>
-                              <p>This action cannot be undone.</p>
+          <p>This action cannot be undone.</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -58,11 +58,11 @@
     </div>
   </div>
 
-
+  {% endfor %}
 
   <div class="row">
     <div class="col text-center">
-<h1> Discover what our clients are saying about our services </h1>
+      <h1> Discover what our clients are saying about our services </h1>
     </div>
 
     <div class="row">
@@ -81,21 +81,12 @@
             <div class="div">Rating: {{ review.rating}}</div>
             <div class="div">By: {{ review.customer }}</div>
           </li>
-          {% endfor  %}
+          {% endfor %}
         </ul>
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
 </div>
-
-
 </div>
 
 
