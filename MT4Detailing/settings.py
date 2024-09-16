@@ -128,6 +128,7 @@ CSRF_TRUSTED_ORIGINS = [
 
     "https://*.8000-nors235-mt4musa-caur2rgeppy.ws.codeinstitute-ide.net/admin/login/?next=/admin/"
     "https://*.dashboard.render.com/"
+    "https://8000-nors235-mt4musa-jlvofjdwsse.ws.codeinstitute-ide.net"
 ]
 
 # ]
